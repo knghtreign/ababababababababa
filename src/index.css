@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+html, body {
+  background-color: #F4F1DE;
+  color: #0F172A;
+}
+
+@layer utilities {
+  @keyframes goldShimmerSweep {
+    0% {
+      transform: translateX(-180%) skewX(-25deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    40% {
+      transform: translateX(260%) skewX(-25deg);
+      opacity: 1;
+    }
+    45%, 100% {
+      transform: translateX(260%) skewX(-25deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes goldPulseGlow {
+    0%, 100% {
+      box-shadow: 
+        inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1.5px 2px 0 rgba(140, 85, 10, 0.35),
+        0 4px 12px -2px rgba(15, 25, 40, 0.25),
+        0 1px 3px 0 rgba(15, 25, 40, 0.12);
+    }
+    50% {
+      box-shadow: 
+        inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1.5px 2px 0 rgba(140, 85, 10, 0.28),
+        0 6px 16px -2px rgba(15, 25, 40, 0.3),
+        0 2px 4px 0 rgba(15, 25, 40, 0.15);
+    }
+  }
+
+  .animate-gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-gold-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 25%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 100%
+    );
+    animation: goldShimmerSweep 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  /* Polished Metallic Gold CTA Button - Specular Surface Shine, Zero Glow */
+  .gold-cta-btn {
+    background: linear-gradient(
+      105deg,
+      #DFAC38 0%,
+      #EBBF50 18%,
+      #FDE68A 45%,
+      #FFF6D0 50%,
+      #ECC356 75%,
+      #DC9F28 100%
+    );
+    color: #0B1528 !important;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 9999px !important;
+    box-shadow: 
+      inset 0 2px 2px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1.5px 2px 0 rgba(140, 85, 10, 0.38),
+      0 4px 12px -2px rgba(15, 25, 40, 0.25),
+      0 1px 3px 0 rgba(15, 25, 40, 0.12);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gold-cta-btn:hover {
+    background: linear-gradient(
+      105deg,
+      #E4B542 0%,
+      #F2CA5C 18%,
+      #FFF0A4 45%,
+      #FFFBE2 50%,
+      #F2CE64 75%,
+      #E3A832 100%
+    );
+    box-shadow: 
+      inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+      inset 0 -1.5px 2px 0 rgba(140, 85, 10, 0.3),
+      0 6px 16px -2px rgba(15, 25, 40, 0.3),
+      0 2px 4px 0 rgba(15, 25, 40, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .gold-cta-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+      inset 0 2px 3px 0 rgba(140, 85, 10, 0.45),
+      0 2px 6px -1px rgba(15, 25, 40, 0.22);
+  }
+}
+
