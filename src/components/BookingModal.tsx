@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
-import { X, CheckCircle2, User, Phone, ArrowRight, MessageSquare, MapPin, Sparkles, Clock } from 'lucide-react';
+import { X, CheckCircle2, User, Phone, Mail, ArrowRight, MessageSquare, MapPin, Sparkles, Clock } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { CLINIC_DETAILS } from '../data/clinicData';
 import { playSparkle, playPop, playSoftClick } from '../utils/soundEffects';
@@ -260,7 +260,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                           required
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="079777 76136"
+                          placeholder="e.g. 7977776136"
                           className="w-full bg-slate-50 border border-slate-200 focus:border-amber-400 focus:bg-white text-[#0F172A] placeholder:text-slate-400 text-xs sm:text-sm pl-10 pr-4 py-3 rounded-2xl outline-none transition-all font-medium"
                         />
                       </div>
@@ -373,11 +373,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                             WhatsApp Redirect Ready
                           </span>
                           <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">
-                            +91 79777 76136
+                            +91 7977776136
                           </span>
                         </div>
                         <p className="text-[11px] sm:text-xs text-emerald-800/90 mt-1 leading-relaxed">
-                          Your appointment details have been compiled and sent to Dr. Deepal's WhatsApp number (<strong>079777 76136</strong>).
+                          Your appointment details have been compiled and sent to Dr. Deepal's WhatsApp number (<strong>7977776136</strong>).
                         </p>
                         {whatsappLink && (
                           <a
@@ -403,14 +403,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <p className="text-[11px] sm:text-xs text-slate-700 leading-relaxed font-medium">
                       {EXACT_CLINIC_ADDRESS}
                     </p>
-                    <div className="pt-2 border-t border-slate-200 text-[11px] text-slate-600 space-y-0.5">
+                    <div className="pt-2 border-t border-slate-200 text-[11px] text-slate-600 space-y-1">
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-3 h-3 text-amber-600 shrink-0" />
                         <span><strong>Hours:</strong> Mon–Fri 11:00 AM – 7:00 PM | Sat 11:00 AM – 4:00 PM (Sun Closed)</span>
                       </div>
-                      <div className="flex justify-between pt-1 text-slate-500">
-                        <span>📞 079777 76136</span>
-                        <span>Patient: <strong className="text-slate-800">{phone}</strong></span>
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pt-1 text-slate-600">
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <a href={`tel:${CLINIC_DETAILS.phoneClean}`} className="hover:text-amber-700 font-bold inline-flex items-center gap-1">
+                            <Phone className="w-3 h-3 text-amber-600" />
+                            <span>{CLINIC_DETAILS.phone}</span>
+                          </a>
+                          <a href={`tel:${CLINIC_DETAILS.telephoneClean}`} className="hover:text-amber-700 font-bold inline-flex items-center gap-1">
+                            <Phone className="w-3 h-3 text-amber-600" />
+                            <span>{CLINIC_DETAILS.telephone}</span>
+                          </a>
+                          <a href={`mailto:${CLINIC_DETAILS.email}`} className="hover:text-amber-700 font-bold inline-flex items-center gap-1">
+                            <Mail className="w-3 h-3 text-amber-600" />
+                            <span>{CLINIC_DETAILS.email}</span>
+                          </a>
+                        </div>
+                        <span className="text-[10px] text-slate-400">Patient: <strong className="text-slate-700">{phone}</strong></span>
                       </div>
                     </div>
                   </div>

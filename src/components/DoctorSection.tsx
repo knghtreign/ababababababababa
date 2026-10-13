@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, ArrowRight, X, Award, MapPin, Phone, Star, CheckCircle2, ShieldCheck, Heart } from 'lucide-react';
+import { Sparkles, ArrowRight, X, Award, MapPin, Phone, Mail, Star, CheckCircle2, ShieldCheck, Heart } from 'lucide-react';
 import { CLINIC_IMAGES, CLINIC_DETAILS } from '../data/clinicData';
 import { playPop, playSoftClick, playSparkle } from '../utils/soundEffects';
 import { TextHighlight, PopBadge } from './AnimatedText';
@@ -274,9 +274,23 @@ export const DoctorSection: React.FC<DoctorSectionProps> = ({ onOpenBooking }) =
                           transition={{ type: 'spring', damping: 12, stiffness: 300 }}
                           href={`tel:${CLINIC_DETAILS.phoneClean}`}
                           className="bg-slate-100 hover:bg-slate-200 text-[#0F172A] font-bold text-xs px-4 py-3 rounded-full border border-slate-200 transition-all flex items-center gap-1.5"
+                          title="Call 7977776136"
                         >
                           <Phone className="w-3.5 h-3.5 text-amber-600" />
-                          <span>Call Clinic</span>
+                          <span>Call 7977776136</span>
+                        </motion.a>
+
+                        <motion.a
+                          id="doctor-modal-email-btn"
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          transition={{ type: 'spring', damping: 12, stiffness: 300 }}
+                          href={`mailto:${CLINIC_DETAILS.email}`}
+                          className="bg-slate-100 hover:bg-slate-200 text-[#0F172A] font-bold text-xs px-4 py-3 rounded-full border border-slate-200 transition-all flex items-center gap-1.5"
+                          title="Email drdeepalshah@gmail.com"
+                        >
+                          <Mail className="w-3.5 h-3.5 text-amber-600" />
+                          <span>Email</span>
                         </motion.a>
                       </div>
                     </div>

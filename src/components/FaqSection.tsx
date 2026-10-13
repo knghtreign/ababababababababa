@@ -57,8 +57,9 @@ export const FaqSection: React.FC = () => {
         return (
           <p className="pt-2 text-blue-50 leading-relaxed">
             You can instantly reserve your preferred slot via the{' '}
-            <TextHighlight color="amber" variant="pill">Book Consultation</TextHighlight> button on this page, or reach our clinic desk directly at{' '}
-            <a href="tel:+917977776136" className="font-black text-[#FDE68A] hover:underline">079777 76136</a>.
+            <TextHighlight color="amber" variant="pill">Book Consultation</TextHighlight> button on this page, call our clinic desk at{' '}
+            <a href="tel:+917977776136" className="font-black text-[#FDE68A] hover:underline">7977776136</a>, or email{' '}
+            <a href="mailto:drdeepalshah@gmail.com" className="font-black text-[#FDE68A] hover:underline">drdeepalshah@gmail.com</a>.
           </p>
         );
       default:

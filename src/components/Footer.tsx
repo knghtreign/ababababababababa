@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Phone, MapPin, Star, ArrowUpRight, Heart, Clock } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin, Star, ArrowUpRight, Clock } from 'lucide-react';
 import { CLINIC_DETAILS } from '../data/clinicData';
 import { PopBadge, StaggerHeading, TextHighlight } from './AnimatedText';
 import { playPop, playSoftClick } from '../utils/soundEffects';
@@ -192,9 +192,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <strong className="text-white">Sunday:</strong><br />
                 Closed
               </p>
-              <p className="text-xs text-[#FDE68A] pt-1 font-bold">
-                Phone: {CLINIC_DETAILS.phone}
-              </p>
+              <div className="pt-2 space-y-1.5 border-t border-white/20">
+                <a
+                  href={`tel:${CLINIC_DETAILS.phoneClean}`}
+                  className="flex items-center gap-1.5 text-xs text-[#FDE68A] hover:text-white font-bold transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                  <span>Phone: {CLINIC_DETAILS.phone}</span>
+                </a>
+                <a
+                  href={`tel:${CLINIC_DETAILS.telephoneClean}`}
+                  className="flex items-center gap-1.5 text-xs text-[#FDE68A] hover:text-white font-bold transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                  <span>Tel: {CLINIC_DETAILS.telephone}</span>
+                </a>
+                <a
+                  href={`mailto:${CLINIC_DETAILS.email}`}
+                  className="flex items-center gap-1.5 text-xs text-blue-100 hover:text-amber-200 font-medium transition-colors break-all"
+                >
+                  <Mail className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                  <span>{CLINIC_DETAILS.email}</span>
+                </a>
+              </div>
             </motion.div>
 
           </div>
@@ -204,9 +224,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <p>© {new Date().getFullYear()} Dr Deepals Dental Clinic · Malabar Hill, Mumbai. All rights reserved.</p>
             <motion.p
               whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-1 font-medium cursor-default"
+              className="flex items-center gap-1 font-medium cursor-default text-[#FDE68A]"
             >
-              Crafted for healthy smiles with <Heart className="w-3.5 h-3.5 text-rose-300 fill-rose-300 animate-pulse" />
+              Your smile is in good hands.
             </motion.p>
           </div>
 

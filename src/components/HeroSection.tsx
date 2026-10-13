@@ -193,13 +193,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </motion.div>
             )}
 
-            {/* Book Appointment CTA Button */}
+            {/* Book Appointment CTA Button & Call Phone */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.45, type: 'spring', damping: 14 }}
-              className="pt-0 sm:pt-0.5"
+              className="pt-0 sm:pt-0.5 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto"
             >
               <motion.button
                 id="hero-book-appointment-btn"
@@ -214,6 +214,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   <span className="text-sm font-black leading-none">↗</span>
                 </div>
               </motion.button>
+
+              <motion.a
+                id="hero-call-clinic-btn"
+                href={`tel:${CLINIC_DETAILS.phoneClean}`}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: 'spring', damping: 12, stiffness: 300 }}
+                className="bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm px-5 py-3.5 sm:py-4 rounded-full border border-white/35 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs w-full sm:w-auto font-['Outfit',sans-serif]"
+                title="Call 7977776136"
+              >
+                <Phone className="w-4 h-4 text-amber-300" />
+                <span>7977776136</span>
+              </motion.a>
             </motion.div>
           </motion.div>
 

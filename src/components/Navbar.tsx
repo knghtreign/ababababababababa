@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Phone, X, ArrowRight } from 'lucide-react';
+import { Sparkles, Phone, Mail, X, ArrowRight } from 'lucide-react';
 import { CLINIC_DETAILS } from '../data/clinicData';
 import { playSoftClick } from '../utils/soundEffects';
 
@@ -151,6 +151,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   <span>BOOK YOUR CONSULTATION</span>
                   <span className="text-base font-black">↗</span>
                 </button>
+
+                {/* Quick Contact Links */}
+                <div className="mt-5 pt-4 border-t border-slate-200/90 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-bold text-slate-700">
+                  <a
+                    href={`tel:${CLINIC_DETAILS.phoneClean}`}
+                    className="inline-flex items-center gap-1.5 hover:text-[#C58B1B] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-amber-600" />
+                    <span>{CLINIC_DETAILS.phone}</span>
+                  </a>
+                  <span className="hidden sm:inline text-slate-300">•</span>
+                  <a
+                    href={`tel:${CLINIC_DETAILS.telephoneClean}`}
+                    className="inline-flex items-center gap-1.5 hover:text-[#C58B1B] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-amber-600" />
+                    <span>{CLINIC_DETAILS.telephone}</span>
+                  </a>
+                  <span className="hidden sm:inline text-slate-300">•</span>
+                  <a
+                    href={`mailto:${CLINIC_DETAILS.email}`}
+                    className="inline-flex items-center gap-1.5 hover:text-[#C58B1B] transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-amber-600" />
+                    <span>{CLINIC_DETAILS.email}</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

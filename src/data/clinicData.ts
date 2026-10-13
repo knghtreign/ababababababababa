@@ -98,12 +98,14 @@ export const CLINIC_DETAILS = {
   name: "Dr Deepals Dental Clinic",
   doctor: "Dr. Deepal",
   role: "Cosmetic & Restorative Dental Surgeon",
-  tagline: "Your smile, looked after.",
+  tagline: "Your smile is in good hands.",
   subtext: "Dr Deepals Dental Clinic · Malabar Hill",
   address: "Guide Building, Gate No. 2, Shop No. 9, Ground Floor, Near Priyadarshini Park, L.D. Ruparel Marg, Malabar Hill, Mumbai 400006",
-  phone: "079777 76136",
+  phone: "7977776136",
   phoneClean: "+917977776136",
-  email: "drdeepaldental@gmail.com",
+  telephone: "022 35767495",
+  telephoneClean: "+912235767495",
+  email: "drdeepalshah@gmail.com",
   rating: "5.0",
   totalReviews: 84,
   neighborhood: "Malabar Hill, South Mumbai",
@@ -417,7 +419,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-6',
     question: 'How can I book or reschedule my visit?',
-    answer: 'You can instantly request your preferred date and time through the floating booking pill on this page, or speak directly with our clinic coordinator at 079777 76136.'
+    answer: 'You can instantly request your preferred date and time through the floating booking pill on this page, call our clinic at 7977776136, or email drdeepalshah@gmail.com.'
   }
 ];
 
